@@ -48,7 +48,10 @@
 {
 //    [self.tabelView customizeCell:cell];
 //    [self.tabelView appearCell:cell andDirection:directionRight andRow:indexPath.row];
-    [self.tabelView appearCell:cell andDirection:directionRight];
+//    [self.tabelView appearCell:cell andDirection:directionRight];
+    [self.tabelView appearCell:cell andScale:0.5];
+
+
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

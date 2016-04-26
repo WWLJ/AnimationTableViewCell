@@ -28,7 +28,23 @@ typedef NS_ENUM(NSInteger, Direction) {
 - (void)appearCell:(UITableViewCell *)cell andDirection:(Duration)direction andRow:(NSInteger)row;
 
 
-
+/**
+ *  旋转出现的cell
+ *
+ *  @param cell      当前cell
+ *  @param direction 旋转的方向(逆时针或者顺时针)
+ */
 - (void)appearCell:(UITableViewCell *)cell andDirection:(Duration)direction;
+
+
+
+/**
+ *  由小变大的cell动画
+ *
+ *  @param cell  当前cell
+ *  @param scale 缩小比例
+ */
+- (void)appearCell:(UITableViewCell *)cell andScale:(CGFloat)scale;
+
 
 @end

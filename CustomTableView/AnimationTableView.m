@@ -97,12 +97,10 @@
     switch (direction) {
         case directionRight: {
             cell.layer.transform = CATransform3DMakeRotation(90.0f, 0, 1, 0);
-            cell.layer.anchorPoint = CGPointMake(1, 0.5);
         }
             break;
         case directionLeft: {
             cell.layer.transform = CATransform3DMakeRotation(-90.0f, 0, 1, 0);
-            cell.layer.anchorPoint = CGPointMake(0.0, 0.5);
         }
     }
     cell.alpha = 0;
@@ -117,5 +115,23 @@
                          cell.alpha = 1;
                      } completion:nil];
 }
+
+
+- (void)appearCell:(UITableViewCell *)cell andScale:(CGFloat)scale
+{
+    CATransform3D rotate = CATransform3DMakeScale(0, scale, scale);
+    cell.layer.shadowColor = [UIColor blackColor].CGColor;
+    cell.layer.shadowOffset = CGSizeMake(10, 10);
+    cell.alpha = 0;
+    cell.layer.transform = rotate;
+    [UIView beginAnimations:@"scale" context:nil];
+    [UIView setAnimationDuration:AnimationDuration];
+    cell.layer.transform = CATransform3DIdentity;
+    cell.alpha = 1;
+    cell.layer.shadowOffset = CGSizeMake(0, 0);
+    [UIView commitAnimations];
+}
+
+
 
 @end
